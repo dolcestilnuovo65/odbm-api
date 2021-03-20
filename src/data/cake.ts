@@ -7,7 +7,7 @@ import { support } from 'jquery';
 export class Cake extends RemoteData{
 
     
-    constructor(id, public title:string='',recipt:string='',fotoUrl=''){
+    constructor(id, public Title:string='',recipt:string='',Poster=''){
         super(id);
     }
 }

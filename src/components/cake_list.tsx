@@ -1,5 +1,5 @@
 import React from 'react';
-import MovieItem from './cake_item'
+import CakeItem from './cake_item'
 
 export default function cakeList({cakes}) {
    if(!cakes){
@@ -8,7 +8,7 @@ export default function cakeList({cakes}) {
     return (
     <div className="row">
     {
-        cakes.map(cake => <MovieItem  key={cake.imdbID} cake={cake}/>)
+        cakes.map(cake => <CakeItem  key={cake.id} cake={cake}/>)
     }
     </div>)
 }

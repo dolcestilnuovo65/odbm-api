@@ -17,7 +17,7 @@ export default class SearchBar extends Component {
     }
     searchClicked = (evt) => {
         evt.preventDefault();
-         this.props.onSearchMovie(this.state.term);
+         this.props.onSearchCake(this.state.term);
     }
     render(){
 

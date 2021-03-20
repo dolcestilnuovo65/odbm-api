@@ -15,7 +15,7 @@ export default function navBar({onSearchTerm}) {
   
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
   <MenuBar/>
-   <SearchBar onSearchMovie = {onSearchTerm}/>
+   <SearchBar onSearchCake = {onSearchTerm}/>
   </div>
 </nav>
     )

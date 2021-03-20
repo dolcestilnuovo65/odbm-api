@@ -8,7 +8,7 @@ import { RemoteCollection } from './lib/backbone';
 const APIKEY = '4cb9def9';
 const APIURL = 'http://www.omdbapi.com';
 
-function fetchMovies(search = '') {
+function fetchCakes(search = '') {
 
   return fetch(APIURL + '?apikey=' + APIKEY +'&s='+ search).then( res => res.json());
     
@@ -18,12 +18,12 @@ class App extends Component {
   constructor(props){
     super(props);
     let cake = new Cake(1,"Torta di mele","Preparazione",'01.jpg');
-    let CakeColl = new RemoteCollection<Cake>('CakeCollection','1',new CakeFactory());
-    CakeColl.Add(cake);
+    this.cakeColl = new RemoteCollection<Cake>('CakeCollection','1',new CakeFactory());
+    this.cakeColl.Add(cake);
     cake = new Cake(2,"Tiramisu","Preparazione",'02.jpg');
-    CakeColl.Add(cake);
+    this.cakeColl.Add(cake);
   
-    CakeColl.save();
+    this.cakeColl.save();
     
 
 
@@ -35,20 +35,20 @@ class App extends Component {
 
     
   }
-  searchMovies = (term = '') =>{
+  searchCakes = (term = '') =>{
      if(term.length< 3){
        return
      }
-     fetchMovies(term).then(res => {
+     fetchCakes(term).then(res => {
       this.setState({
-        cakes : res.Search,
+        cakes : this.cakeColl.items,
         totalCount : res.totalResults
       })
     })
 
   }
   componentDidMount(){
-    this.searchMovies('back to the future')
+    this.searchCakes('back to the future')
    
 
 
@@ -56,7 +56,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-      <NavBar onSearchTerm = {this.searchMovies} />
+      <NavBar onSearchTerm = {this.searchCakes} />
       <div className="container">
        <h1>My favorite cakes </h1>
        <CakeList cakes={ (this.state as any).cakes } />
