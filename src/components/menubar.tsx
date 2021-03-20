@@ -14,7 +14,7 @@ export default function menuBar() {
             Dropdown
           </a>
           <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a className="dropdown-item" href="/movies">Action</a>
+            <a className="dropdown-item" href="/cakes">Action</a>
             <a className="dropdown-item" href="/series">Another action</a>
             
           </div>

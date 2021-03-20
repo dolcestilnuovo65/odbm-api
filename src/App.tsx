@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import VideoList from './components/movie_list';
+import CakeList from './components/cake_list';
 import NavBar from './components/navbar'
 import { Cake, CakeFactory } from './data/cake';
 import { RemoteCollection } from './lib/backbone';
@@ -18,17 +18,17 @@ class App extends Component {
   constructor(props){
     super(props);
     let cake = new Cake(1,"Torta di mele","Preparazione",'01.jpg');
-    let cackeColl = new RemoteCollection<Cake>('CakeCollection','1',new CakeFactory());
-    cackeColl.Add(cake);
+    let CakeColl = new RemoteCollection<Cake>('CakeCollection','1',new CakeFactory());
+    CakeColl.Add(cake);
     cake = new Cake(2,"Tiramisu","Preparazione",'02.jpg');
-    cackeColl.Add(cake);
+    CakeColl.Add(cake);
   
-    cackeColl.save();
+    CakeColl.save();
     
 
 
     this.state = {
-       movies :  [],
+       cakes :  [],
        totalCount: 0
     }
 
@@ -41,7 +41,7 @@ class App extends Component {
      }
      fetchMovies(term).then(res => {
       this.setState({
-        movies : res.Search,
+        cakes : res.Search,
         totalCount : res.totalResults
       })
     })
@@ -58,8 +58,8 @@ class App extends Component {
       <React.Fragment>
       <NavBar onSearchTerm = {this.searchMovies} />
       <div className="container">
-       <h1>My favorite movies </h1>
-       <VideoList movies={ (this.state as any).movies } />
+       <h1>My favorite cakes </h1>
+       <CakeList cakes={ (this.state as any).cakes } />
       </div>
       </React.Fragment>
     );
