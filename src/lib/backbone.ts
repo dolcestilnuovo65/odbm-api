@@ -25,12 +25,12 @@ let urlBackbone: string = "";
 let DBFSInstancePath: string = "";
 let DBFSDatabase: string = "";
 
-function setUrlBackbone(url: string) {
+export function setUrlBackbone(url: string) {
     urlBackbone = url;
 }
 
 
-function setVirtualDB(instance: string,database:string) {
+export function setVirtualDB(instance: string,database:string) {
     DBFSInstancePath = instance;
     DBFSDatabase = database;
 
@@ -2035,5 +2035,3 @@ function loadjscssfile(filename, filetype) {
         document.getElementsByTagName("head")[0].appendChild(fileref);
 }
 
-setUrlBackbone("http://localhost/TeloregaloMa/php/genericitemEx.php");
-setVirtualDB('c:/ADVsec/TeloregaloMa', 'DB');

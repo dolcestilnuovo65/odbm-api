@@ -6,7 +6,7 @@ export default class SearchBar extends Component {
         super(props);
        
         this.state = {
-            term: 'la dolce vita'
+            term: 'profiterol'
         }
     }
     searchChange = (evt) =>{

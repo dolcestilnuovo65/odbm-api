@@ -12,6 +12,8 @@
     "connect-backbone-to-react": "^3.0.0",
     "jquery": "^3.6.0",
     "react": "^16.6.1",
+    "react-bootstrap": "^1.5.2",
+    "react-cool-form": "0.0.146",
     "react-dom": "^16.6.1",
     "react-scripts": "^2.1.1",
     "typescript": "^4.2.3",

@@ -1,13 +1,13 @@
 import RemoteData from '../lib/backbone';
 import Backbone from 'backbone';
 import { IRemoteDataFactory } from '../lib/backbone';
-import { support } from 'jquery';
+
 
 
 export class Cake extends RemoteData{
 
     
-    constructor(id, public Title:string='',recipt:string='',Poster=''){
+    constructor(id, public Title:string='',public recipt:string='',public Poster=''){
         super(id);
     }
 }
