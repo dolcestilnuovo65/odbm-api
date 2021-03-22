@@ -72,7 +72,7 @@ class App extends Component {
       <React.Fragment>
       <NavBar onSearchTerm = {this.searchCakes} />
       <div className="container">
-       <h1>My favorite cakes </h1>
+       <h1>Le nostre torte </h1>
        <CakeList cakes={ (this.state as any).cakes } />
       </div>
       </React.Fragment>

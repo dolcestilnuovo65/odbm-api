@@ -21,7 +21,7 @@ export default class ModalForm extends Component<Props, State> {
     constructor(props){
         super(props);
         this.state={
-            name:"prova"
+            name:"NUOVO NOME"
         }
    
 
@@ -35,7 +35,8 @@ export default class ModalForm extends Component<Props, State> {
     }
 
     
-    handleChange = () =>{
+    handleChange = (e) =>{
+        
 
 
     }
@@ -69,8 +70,12 @@ export default class ModalForm extends Component<Props, State> {
            </Modal.Header>
             <Modal.Body>
                 <Form.Group >
-                    <Form.Label>Name: </Form.Label>
-                    <Form.Control type="text" onChange={this.props.handleChange} value={this.state.name} placeholder="name input"/>           
+                    <Form.Label>Nome: </Form.Label>
+                    <Form.Control type="text" onChange={this.props.handleChange}  placeholder="name input"/>       
+                    <Form.Label>Prezzo: </Form.Label>
+                    <Form.Control type="text" onChange={this.props.handleChange}  placeholder="name input"/>       
+                    <Form.Control size="lg" type="text" placeholder="Large text" />
+                    <Form.Control type="file" name="fileToUpload" id="fileToUpload"></Form.Control>    
                 </Form.Group>
             </Modal.Body>
             <Modal.Footer>                
