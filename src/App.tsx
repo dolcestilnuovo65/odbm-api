@@ -20,7 +20,7 @@ class App extends Component {
      let tmpCakeColl  = new RemoteCollection<Cake>('CakeCollection','1',new CakeFactory());
 //     tmpCakeColl.Add(new Cake(4,"Meringata","Preparazione",PHOTOPATH + 'meringata.jpg'));
 //     tmpCakeColl.save();
-      tmpCakeColl.Add(new Cake(5,"Torta Profiterol","Preparazione",PHOTOPATH + 'profiterol.jpg'));
+      tmpCakeColl.Add(new Cake(5,"Torta Profiterol","Preparazione",PHOTOPATH + 'meringata.jpg'));
       tmpCakeColl.save();
 
 

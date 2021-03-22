@@ -1,10 +1,30 @@
-import * as React from 'react';
+import React, {Component} from 'react';
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
 
 
-class ModalForm extends React.Component {
+interface Props{
+    isOpen:boolean,
+    closeModal:Function,
+    handleSubmit:Function,
+    handleChange(n: any):void
+  }
+  
+
+  interface State{
+  name:string
+  }
+  
+
+export default class ModalForm extends Component<Props, State> {
+    constructor(props){
+        super(props);
+   
+
+    }
+   
+
     isOpen:boolean = false;
     
     handleClose = () =>{
@@ -37,8 +57,8 @@ class ModalForm extends React.Component {
             </div>
       
             <Modal 
-              show={this.isOpen} 
-              onHide={this.closeModal}
+              show={this.props.isOpen} 
+              onHide={this.props.closeModal}
               backdrop="static"
             >
             <Modal.Header closeButton>
@@ -47,11 +67,11 @@ class ModalForm extends React.Component {
             <Modal.Body>
                 <Form.Group >
                     <Form.Label>Name: </Form.Label>
-                    <Form.Control type="text" onChange={this.handleChange} value={(this.state as any).name} placeholder="name input"/>           
+                    <Form.Control type="text" onChange={this.props.handleChange} value={this.state.name} placeholder="name input"/>           
                 </Form.Group>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="primary" type="submit" onClick={() => this.handleSubmit((this.state as any).name)}>
+                <Button variant="primary" type="submit" onClick={() => this.props.handleSubmit(this.state.name)}>
                     Submit
                 </Button>
             </Modal.Footer>
