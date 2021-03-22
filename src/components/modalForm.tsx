@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 
 
@@ -20,6 +20,9 @@ interface Props{
 export default class ModalForm extends Component<Props, State> {
     constructor(props){
         super(props);
+        this.state={
+            name:"prova"
+        }
    
 
     }
@@ -62,18 +65,19 @@ export default class ModalForm extends Component<Props, State> {
               backdrop="static"
             >
             <Modal.Header closeButton>
-              <Modal.Title>Modal Form Title</Modal.Title>
-            </Modal.Header>
+              <Modal.Title>Nuova Torta</Modal.Title>
+           </Modal.Header>
             <Modal.Body>
                 <Form.Group >
                     <Form.Label>Name: </Form.Label>
                     <Form.Control type="text" onChange={this.props.handleChange} value={this.state.name} placeholder="name input"/>           
                 </Form.Group>
             </Modal.Body>
-            <Modal.Footer>
+            <Modal.Footer>                
                 <Button variant="primary" type="submit" onClick={() => this.props.handleSubmit(this.state.name)}>
                     Submit
                 </Button>
+
             </Modal.Footer>
           </Modal>
         </>

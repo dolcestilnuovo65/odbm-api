@@ -1,10 +1,11 @@
 import * as React from 'react';
+import { Button } from 'react-bootstrap';
 import ModalForm from './modalForm'
 
 
 export default class menuBar extends React.Component {
   state = {
-    isOpen: true,
+    isOpen: false,
     
   }
   openModal = () => this.setState({ isOpen: true });
@@ -20,7 +21,7 @@ export default class menuBar extends React.Component {
         <li className="nav-item active">
           <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
         </li>
-        <button onClick={this.openModal}>+</button>
+        <Button onClick={this.openModal}>+</Button>
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown"
            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 export default function cakeItem({cake}) {
     return (
@@ -7,7 +8,7 @@ export default function cakeItem({cake}) {
              <img className="card-img-top" src={cake.Poster} alt={cake.Title} />
              <div className="card-body">
                 <h5 className="card-title">{cake.Title}</h5>
-                <button  className="btn btn-primary">VIEW DETAIL</button>
+                <Button  className="btn btn-primary">Ingedienti</Button>
             </div>
         </div>
         
