@@ -7,7 +7,7 @@ import { IRemoteDataFactory } from '../lib/backbone';
 export class Cake extends RemoteData{
 
     
-    constructor(id, public Title:string='',public recipt:string='',public Poster=''){
+    constructor(id:any, public Title:string='',public recipt:string='',public Poster='',public num:string,public price,public dateMade:Date){
         super(id);
     }
 }
@@ -15,7 +15,7 @@ export class Cake extends RemoteData{
 
 export class CakeFactory implements IRemoteDataFactory {
     newObject(): Cake {
-        return new Cake(-1,'', '');
+        return new Cake(-1,'', '','','','',new Date());
     }
 }
 Backbone.emulateJSON = true;

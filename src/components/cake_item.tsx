@@ -8,6 +8,8 @@ export default function cakeItem({cake}) {
              <img className="card-img-top" src={cake.Poster} alt={cake.Title} />
              <div className="card-body">
                 <h5 className="card-title">{cake.Title}</h5>
+                <h6 className="card-title">Prezzo: {cake.price}</h6>
+                <h6 className="card-title">Disponibilità: {cake.num}</h6>
                 <Button  className="btn btn-primary">Ingedienti</Button>
             </div>
         </div>

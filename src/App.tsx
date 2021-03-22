@@ -17,23 +17,29 @@ class App extends Component {
 
      this.cakeColl.fetchData('1');
    
-     let tmpCakeColl  = new RemoteCollection<Cake>('CakeCollection','1',new CakeFactory());
-//     tmpCakeColl.Add(new Cake(4,"Meringata","Preparazione",PHOTOPATH + 'meringata.jpg'));
-//     tmpCakeColl.save();
-      tmpCakeColl.Add(new Cake(5,"Torta Profiterol","Preparazione",PHOTOPATH + 'meringata.jpg'));
-      tmpCakeColl.save();
+     const ricette:string =  `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+      , sunt in culpa qui officia deserunt mollit anim id est laborum`;
+     
+    
+    
+
+    //  let tmpCakeColl  = new RemoteCollection<Cake>('CakeCollection','1',new CakeFactory());
+ 
+     
+
+    //  tmpCakeColl.Add(new Cake(1,"Torta di mele",ricette,PHOTOPATH + 'torta-di-mele.jpg','2','15	€',new Date()));
+    //  tmpCakeColl.Add(new Cake(2,"Tiramisu",ricette,PHOTOPATH + 'TIRAMISU.jpg','3','13	€',new Date()));
+    //  tmpCakeColl.Add(new Cake(3,"Torta al cioccolato",ricette,PHOTOPATH + 'cioccolato.webp','3','20	€',new Date()));
+    //  tmpCakeColl.Add(new Cake(4,"Meringata",ricette,PHOTOPATH + 'meringata.jpg','3','18	€',new Date()));
+    //  tmpCakeColl.Add(new Cake(5,"Torta Profiterol",ricette,PHOTOPATH + 'profiterol.jpg','2','17	€',new Date()));
+    //  tmpCakeColl.save();
 
 
 
 
-    // let cake = new Cake(1,"Torta di mele","Preparazione",PHOTOPATH + 'torta-di-mele.jpg');
-    // this.cakeColl.Add(cake);
-    // cake = new Cake(2,"Tiramisu","Preparazione",PHOTOPATH + 'TIRAMISU.jpg');
-    // this.cakeColl.Add(cake);
-    //this.cakeColl.Add(new Cake(3,"Torta al cioccolato","Preparazione",PHOTOPATH + 'cioccolato.webp'));
-    // this.cakeColl.save();
-
-    // this.cakeColl.save();
+ 
     
 
 
