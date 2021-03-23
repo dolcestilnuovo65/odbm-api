@@ -12,7 +12,7 @@ class App extends Component {
   constructor(props){
     super(props);
     setUrlBackbone(URLBACKBONE);
-    setVirtualDB('c:/ADVsec/cake-react', 'DB');
+    setVirtualDB('/web/htdocs/www.dimmicosavuoi.it/home/build/cake-react', 'DB');
     this.cakeColl = new RemoteCollection<Cake>('CakeCollection','1',new CakeFactory());
 
      this.cakeColl.fetchData('1');
