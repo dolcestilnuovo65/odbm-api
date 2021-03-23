@@ -66,6 +66,7 @@ export default class ModalForm extends Component<Props, State> {
          cake.id = newId.toString();
          cake.Poster = cake.Title + ".jpg";
          cake.dateMade = new Date();
+         cake.price = cake.price + '€';
 
          tmpCakeColl  = new RemoteCollection<Cake>('CakeCollection','1',new CakeFactory());
 
@@ -77,6 +78,7 @@ export default class ModalForm extends Component<Props, State> {
         this.isOpen = false;
 
         this.props.handleSubmit();
+        this.props.closeModal();
    
 
 
