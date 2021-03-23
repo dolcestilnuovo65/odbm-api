@@ -657,9 +657,11 @@ export default class RemoteData extends Backbone.Model implements IRemoteData {
             exclude["parentId"] = true;
             exclude["excludeFromDBFS"] = true;
             exclude["collectionPrototype"] = true;
+            exclude["url"] = true;
+            exclude["sessionTkn"] = true;
                 // estraggo i membri della classe
             var all = Object.getOwnPropertyNames(this);
-            var result: string[] = new Array(100); 
+            var result: string[] = []; 
 
 
  

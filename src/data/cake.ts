@@ -4,7 +4,7 @@ import { IRemoteDataFactory } from '../lib/backbone';
 
 
 
-export class Cake extends RemoteData{
+export  class Cake extends RemoteData{
 
     
     constructor(id:any, public Title:string='',public recipt:string='',public Poster='',public num:string,public price,public dateMade:Date){

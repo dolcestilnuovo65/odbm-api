@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
+import { Cake, CakeFactory } from '../data/cake';
+import { RemoteCollection } from '../lib/backbone';
 
 
 interface Props{
@@ -18,12 +20,13 @@ interface Props{
   
 
 export default class ModalForm extends Component<Props, State> {
+    titleRef:any;
     constructor(props){
         super(props);
         this.state={
             name:"NUOVO NOME"
         }
-   
+        this.titleRef = React.createRef();
 
     }
    
@@ -36,7 +39,8 @@ export default class ModalForm extends Component<Props, State> {
 
     
     handleChange = (e) =>{
-        
+        let f = e;
+
 
 
     }
@@ -47,6 +51,21 @@ export default class ModalForm extends Component<Props, State> {
 
     
     handleSubmit = (e) =>{
+        let cake = new CakeFactory().newObject();
+        let pub = cake.getPublicMember();
+        for(let mem of pub)
+          cake[mem] = $('#' + mem).val() 
+
+         let tmpCakeColl  = new RemoteCollection<Cake>('CakeCollection','1',new CakeFactory());
+ 
+     
+
+        tmpCakeColl.Add(cake).save();
+
+        
+   
+
+
 
     }
 
@@ -71,15 +90,19 @@ export default class ModalForm extends Component<Props, State> {
             <Modal.Body>
                 <Form.Group >
                     <Form.Label>Nome: </Form.Label>
-                    <Form.Control type="text" onChange={this.props.handleChange}  placeholder="name input"/>       
+                    <Form.Control id="Title" type="text" onChange={this.handleChange} ref={this.titleRef}  />       
                     <Form.Label>Prezzo: </Form.Label>
-                    <Form.Control type="text" onChange={this.props.handleChange}  placeholder="name input"/>       
-                    <Form.Control size="lg" type="text" placeholder="Large text" />
+                    <Form.Control id="price" type="text" onChange={this.handleChange}  />  
+                    <Form.Label>Disponibità: </Form.Label>
+                    <Form.Control id="num" type="text" onChange={this.handleChange}  />  
+                    <Form.Label>Ingredienti: </Form.Label>
+                    <Form.Control id="recipt" as="textarea" rows={3} onChange={this.handleChange} />     
+
                     <Form.Control type="file" name="fileToUpload" id="fileToUpload"></Form.Control>    
                 </Form.Group>
             </Modal.Body>
             <Modal.Footer>                
-                <Button variant="primary" type="submit" onClick={() => this.props.handleSubmit(this.state.name)}>
+                <Button variant="primary" type="submit" onClick={() => this.handleSubmit(this.state.name)}>
                     Submit
                 </Button>
 

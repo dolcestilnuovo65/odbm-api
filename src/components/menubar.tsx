@@ -10,7 +10,12 @@ export default class menuBar extends React.Component {
   }
   openModal = () => this.setState({ isOpen: true });
   closeModal = () => this.setState({ isOpen: false });
-  handleSubmit = (name) =>{}; //some code
+  handleSubmit = (name) =>{
+
+
+
+
+  }; //some code
   handleChange = (e) => {};
 
    render(){
@@ -21,7 +26,7 @@ export default class menuBar extends React.Component {
         <li className="nav-item active">
           <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
         </li>
-        <Button onClick={this.openModal}>+</Button>
+        <Button size="lg" onClick={this.openModal}>+</Button>
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown"
            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
