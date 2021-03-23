@@ -58,6 +58,19 @@ class App extends Component {
  
 
   }
+
+  onNewCake = () =>{
+
+    this.cakeColl.fetchData('1');
+    this.setState({
+      cakes : this.cakeColl.items,
+      totalCount : this.cakeColl.items.length
+    })
+   
+
+ }
+
+
   componentDidMount(){
     this.setState({
       cakes : this.cakeColl.items,
@@ -70,7 +83,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-      <NavBar onSearchTerm = {this.searchCakes} />
+      <NavBar onSearchTerm = {this.searchCakes} onNewCake={this.onNewCake}/>
       <div className="container">
        <h1>Le nostre torte </h1>
        <CakeList cakes={ (this.state as any).cakes } />

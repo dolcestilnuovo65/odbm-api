@@ -2,8 +2,11 @@ import * as React from 'react';
 import { Button } from 'react-bootstrap';
 import ModalForm from './modalForm'
 
+interface Props{
+  onNewCake:Function
+}
 
-export default class menuBar extends React.Component {
+export default class menuBar extends React.Component<Props> {
   state = {
     isOpen: false,
     
@@ -12,7 +15,7 @@ export default class menuBar extends React.Component {
   closeModal = () => this.setState({ isOpen: false });
   handleSubmit = (name) =>{
 
-
+   this.props.onNewCake();
 
 
   }; //some code

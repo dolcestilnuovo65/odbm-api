@@ -1861,6 +1861,14 @@ export class RemoteCollection<T> extends RemoteData implements IRemoteCollection
         return null;
     }
 
+    public GetMaxId(): number {
+        return this.items.reduce(function (p, v) {
+            return ( p.id > v.id ? p.id : v.id );
+          });
+    }
+
+ 
+
     // Length of the collection
     public Count() { return this.items.length; }
 

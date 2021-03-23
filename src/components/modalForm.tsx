@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { Cake, CakeFactory } from '../data/cake';
 import { RemoteCollection } from '../lib/backbone';
+import { CallTracker } from 'node:assert';
 
 
 interface Props{
@@ -56,13 +57,26 @@ export default class ModalForm extends Component<Props, State> {
         for(let mem of pub)
           cake[mem] = $('#' + mem).val() 
 
+       
+          
          let tmpCakeColl  = new RemoteCollection<Cake>('CakeCollection','1',new CakeFactory());
- 
+         tmpCakeColl.fetchData('1');
+         let newId = tmpCakeColl.GetMaxId() + 1;
+
+         cake.id = newId.toString();
+         cake.Poster = cake.Title + ".jpg";
+         cake.dateMade = new Date();
+
+         tmpCakeColl  = new RemoteCollection<Cake>('CakeCollection','1',new CakeFactory());
+
      
 
-        tmpCakeColl.Add(cake).save();
-
+        tmpCakeColl.Add(cake);
+        tmpCakeColl.save();
         
+        this.isOpen = false;
+
+        this.props.handleSubmit();
    
 
 

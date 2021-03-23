@@ -2,7 +2,7 @@
 import React from 'react';
 import SearchBar from './searchbar'
 import MenuBar from './menubar'
-export default function navBar({onSearchTerm}) {
+export default function navBar({onSearchTerm,onNewCake}) {
   
     return (
 <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -14,7 +14,7 @@ export default function navBar({onSearchTerm}) {
   </button>
   
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
-  <MenuBar/>
+  <MenuBar onNewCake={onNewCake}  />
    <SearchBar onSearchCake = {onSearchTerm}/>
   </div>
 </nav>
